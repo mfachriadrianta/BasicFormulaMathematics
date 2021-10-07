@@ -5,9 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Login {
+public class Main {
+
     public static void main(String[] args) throws IOException {
         checkingData();
+
     }
 
     private static void checkingData() throws IOException{
@@ -35,7 +37,7 @@ public class Login {
                 if(!edt_username.equalsIgnoreCase(dataUsername) && !edt_password.equalsIgnoreCase(dataPassword)){
                     System.out.println("Login failed!");
                 } else {
-                    return;
+
                 }
 
                 next = repeatLogin("Are you want next ? ");
