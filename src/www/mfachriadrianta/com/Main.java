@@ -23,7 +23,7 @@ public class Main {
             boolean next = true;
 
             while (next){
-                clearScreen();
+            clearScreen();
             System.out.println("");
             System.out.println("Login");
             Scanner systemInput = new Scanner(System.in);
@@ -68,11 +68,16 @@ public class Main {
             System.out.println("Dashboard Menu");
             System.out.println("1. Calculation Fragment");
             System.out.println("2. Calculation Convertation Unit");
+            System.out.println("3. Calculation Speed");
+            System.out.println("4. Calculation ");
             System.out.print("How many your choice menu ?");
             inputUserMenu = inputMenu.nextLine();
             switch (inputUserMenu){
             case "1" :
-                calculationFragment();
+                    calculationFragment();
+                break;
+                case "2":
+                    calculationConvertationUnit();
                 break;
             default:
                 System.out.println("Not found menu!");
@@ -80,8 +85,13 @@ public class Main {
             nexttwo = repeatMessage("Are you want next ?");
         }
     }
+
     private static void calculationFragment() throws IOException{
         System.out.println("Fragment");
+    }
+
+    private static void calculationConvertationUnit() throws IOException {
+        System.out.println("Convertation Unit");
     }
     private static void clearScreen(){
         try {
