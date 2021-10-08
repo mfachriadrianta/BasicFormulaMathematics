@@ -49,11 +49,11 @@ public class Main {
     private static boolean repeatMessage(String message){
         Scanner inputOne = new Scanner(System.in);
         System.out.print(message + "Yes or No ?");
-        String inputUser = inputOne.next();
+        String inputUser = inputOne.nextLine();
 
         while (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
-            System.err.println("Your only choice Yes or No!");
-            inputUser = inputOne.next();
+            System.err.print("Your only choice Yes or No!");
+            inputUser = inputOne.nextLine();
             System.out.print(message);
         }
 
@@ -73,7 +73,7 @@ public class Main {
             System.out.print("How many your choice menu ?");
             inputUserMenu = inputMenu.nextLine();
             switch (inputUserMenu){
-            case "1" :
+                case "1" :
                     calculationFragment();
                 break;
                 case "2":
@@ -93,6 +93,7 @@ public class Main {
     private static void calculationConvertationUnit() throws IOException {
         System.out.println("Convertation Unit");
     }
+
     private static void clearScreen(){
         try {
             if (System.getProperty("os.name").contains("Windows")){
