@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Login {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         checkingLogin();
     }
 
@@ -35,12 +35,11 @@ public class Login {
 
                 if(!edt_username.equalsIgnoreCase(dataUsername) || !edt_password.equalsIgnoreCase(dataPassword)){
                     System.out.println("Login failed!");
-                    next = repeatMessage("Are you want next ? ");
                 } else {
                     callDashboard();
-//                    dashboardMenu();
-                    next = false;
+
                 }
+                    next = repeatMessage("Are you want next ? ");
             }
             }catch (Exception e){
             System.err.println("Nothing data");
