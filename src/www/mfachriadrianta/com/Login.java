@@ -5,13 +5,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class Login {
 
     public static void main(String[] args) throws IOException {
         checkingLogin();
     }
 
-    private static void checkingLogin(){
+    public static void checkingLogin(){
 
         FileReader fileReader;
         BufferedReader bufferedReader;
@@ -33,17 +33,23 @@ public class Main {
             System.out.print("Password : ");
             edt_password = systemInput.nextLine();
 
-                if(!edt_username.equalsIgnoreCase(dataUsername) && !edt_password.equalsIgnoreCase(dataPassword)){
+                if(!edt_username.equalsIgnoreCase(dataUsername) || !edt_password.equalsIgnoreCase(dataPassword)){
                     System.out.println("Login failed!");
                     next = repeatMessage("Are you want next ? ");
                 } else {
-                    dashboardMenu();
+                    callDashboard();
+//                    dashboardMenu();
                     next = false;
                 }
             }
             }catch (Exception e){
             System.err.println("Nothing data");
             }
+    }
+
+    public static void callDashboard() throws IOException{
+    Dashboard dashboard = new Dashboard();
+    dashboard.menuDashboard();
     }
 
     private static boolean repeatMessage(String message){
@@ -58,40 +64,6 @@ public class Main {
         }
 
         return inputUser.equalsIgnoreCase("Yes");
-    }
-
-    private static void dashboardMenu() throws IOException {
-        Scanner inputMenu = new Scanner(System.in);
-        String inputUserMenu;
-        boolean nexttwo = true;
-        while (nexttwo){
-            System.out.println("Dashboard Menu");
-            System.out.println("1. Calculation Fragment");
-            System.out.println("2. Calculation Convertation Unit");
-            System.out.println("3. Calculation Speed");
-            System.out.println("4. Calculation ");
-            System.out.print("How many your choice menu ?");
-            inputUserMenu = inputMenu.nextLine();
-            switch (inputUserMenu){
-                case "1" :
-                    calculationFragment();
-                break;
-                case "2":
-                    calculationConvertationUnit();
-                break;
-            default:
-                System.out.println("Not found menu!");
-        }
-            nexttwo = repeatMessage("Are you want next ?");
-        }
-    }
-
-    private static void calculationFragment() throws IOException{
-        System.out.println("Fragment");
-    }
-
-    private static void calculationConvertationUnit() throws IOException {
-        System.out.println("Convertation Unit");
     }
 
     private static void clearScreen(){
