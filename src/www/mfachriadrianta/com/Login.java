@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Login {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         checkingLogin();
     }
 
@@ -37,21 +37,20 @@ public class Login {
                     System.out.println("Login failed!");
                 } else {
                     callDashboard();
-
                 }
-                    next = repeatMessage("Are you want next ? ");
+                    next = repeatMessageOne("Are you want next ? ");
             }
             }catch (Exception e){
             System.err.println("Nothing data");
             }
     }
 
-    public static void callDashboard() throws IOException{
-    Dashboard dashboard = new Dashboard();
-    dashboard.menuDashboard();
+    private static void callDashboard() throws IOException{
+        Dashboard dashboard = new Dashboard();
+        dashboard.menuDashboard();
     }
 
-    private static boolean repeatMessage(String message){
+    private static boolean repeatMessageOne(String message){
         Scanner inputOne = new Scanner(System.in);
         System.out.print(message + "Yes or No ?");
         String inputUser = inputOne.nextLine();

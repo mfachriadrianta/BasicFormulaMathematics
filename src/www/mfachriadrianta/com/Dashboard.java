@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Dashboard {
 
-    public void menuDashboard() throws IOException {
+    public void menuDashboard() throws IOException{
         Scanner inputMenu = new Scanner(System.in);
         String inputUserMenu;
         boolean nexttwo = true;
@@ -27,7 +27,7 @@ public class Dashboard {
                 default:
                     System.out.println("Not found menu!");
             }
-            nexttwo = repeatMessage("Are you want next ?");
+                nexttwo = repeatMessageTwo("Are you want next! ");
         }
     }
 
@@ -39,17 +39,32 @@ public class Dashboard {
         System.out.println("Convertation Unit");
     }
 
-    private static boolean repeatMessage(String message){
+    private static boolean repeatMessageTwo(String message) throws IOException{
         Scanner inputOne = new Scanner(System.in);
-        System.out.print(message + "Yes or No ?");
+        System.out.print(message + "Yes or No?");
         String inputUser = inputOne.nextLine();
 
         while (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
-            System.err.print("Your only choice Yes or No!");
-            inputUser = inputOne.nextLine();
-            System.out.print(message);
+            System.err.println("Your only choice, yes or no!");
+            System.out.println("============================");
+            if (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
+                System.out.print(message);
+                inputUser = inputOne.nextLine();
+            } else {
+                clearScreenTwo();
+            }
         }
 
         return inputUser.equalsIgnoreCase("Yes");
+    }
+
+    public static void clearScreenTwo() throws IOException{
+        try {
+            if (System.getProperty("os.name").contains("Windows")){
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            }
+        }catch (Exception e){
+            System.err.println("No cant clear system");
+        }
     }
 }
