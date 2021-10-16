@@ -24,6 +24,9 @@ public class Dashboard {
                 case "2":
                     calculationConvertationUnit();
                     break;
+                case "3":
+                    calculationSpeed();
+                    break;
                 default:
                     System.out.println("Not found menu!");
             }
@@ -41,7 +44,16 @@ public class Dashboard {
 
     private static void calculationSpeed(){
         Scanner valueInput = new Scanner(System.in);
-        Integer valueSpeed, valueDistance, valueTime,
+        Double valueSpeed, valueTimeStart, valueTimeFinish;
+        System.out.print("Speed average per hour : ");
+        valueSpeed = valueInput.nextDouble();
+        System.out.print("Time start : ");
+        valueTimeStart = valueInput.nextDouble();
+        System.out.print("Time finish : ");
+        valueTimeFinish = valueInput.nextDouble();
+        System.out.println("Traveling time : " + (valueTimeStart - valueTimeFinish));
+        System.out.println("Distance time  : " + (valueSpeed * (valueTimeStart - valueTimeFinish)));
+
     }
 
     private static void calculationKPKandFPB(){
