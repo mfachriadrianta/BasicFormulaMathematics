@@ -14,7 +14,7 @@ public class Dashboard {
             System.out.println("1. Calculation Fragment");
             System.out.println("2. Calculation Convertation Unit");
             System.out.println("3. Calculation Speed");
-            System.out.println("4. Calculation ");
+            System.out.println("4. Calculation KPK and FPB");
             System.out.print("How many your choice menu ?");
             inputUserMenu = inputMenu.nextLine();
             switch (inputUserMenu) {
@@ -37,6 +37,20 @@ public class Dashboard {
 
     private static void calculationConvertationUnit(){
         System.out.println("Convertation Unit");
+    }
+
+    private static void calculationSpeed(){
+        Scanner valueInput = new Scanner(System.in);
+        Integer valueSpeed, valueDistance, valueTime,
+    }
+
+    private static void calculationKPKandFPB(){
+        Scanner valueKPKandFPB = new Scanner(System.in);
+        Integer inputValueKPKandFPBOne, inputValueKPKandFPBTwo, a, b, c, KPK, FPB;
+        inputValueKPKandFPBOne = valueKPKandFPB.nextInt();
+        inputValueKPKandFPBTwo = valueKPKandFPB.nextInt();
+
+
     }
 
     private static boolean repeatMessageTwo(String message) throws IOException{
