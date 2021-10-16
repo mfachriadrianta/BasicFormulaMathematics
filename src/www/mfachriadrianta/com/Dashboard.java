@@ -44,16 +44,15 @@ public class Dashboard {
 
     private static void calculationSpeed(){
         Scanner valueInput = new Scanner(System.in);
-        Double valueSpeed, valueTimeStart, valueTimeFinish;
+        Float valueSpeed, valueTimeStart, valueTimeFinish;
         System.out.print("Speed average per hour : ");
-        valueSpeed = valueInput.nextDouble();
+        valueSpeed = valueInput.nextFloat();
         System.out.print("Time start : ");
-        valueTimeStart = valueInput.nextDouble();
+        valueTimeStart = valueInput.nextFloat();
         System.out.print("Time finish : ");
-        valueTimeFinish = valueInput.nextDouble();
-        System.out.println("Traveling time : " + (valueTimeStart - valueTimeFinish));
-        System.out.println("Distance time  : " + (valueSpeed * (valueTimeStart - valueTimeFinish)));
-
+        valueTimeFinish = valueInput.nextFloat();
+        System.out.println("Traveling time : " + (valueTimeFinish - valueTimeStart) + " Clock");
+        System.out.println("Distance time  : " + (valueSpeed * (valueTimeFinish - valueTimeStart) + " Km"));
     }
 
     private static void calculationKPKandFPB(){
@@ -62,6 +61,10 @@ public class Dashboard {
         inputValueKPKandFPBOne = valueKPKandFPB.nextInt();
         inputValueKPKandFPBTwo = valueKPKandFPB.nextInt();
 
+    }
+
+    private static void calculationScala(){
+        Scanner valueScala = new Scanner(System.in);
 
     }
 
