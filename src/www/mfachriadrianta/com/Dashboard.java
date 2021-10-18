@@ -2,6 +2,7 @@ package www.mfachriadrianta.com;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Dashboard {
 
@@ -15,6 +16,7 @@ public class Dashboard {
             System.out.println("2. Calculation Convertation Unit");
             System.out.println("3. Calculation Speed");
             System.out.println("4. Calculation KPK and FPB");
+            System.out.println("5. Calculation Scala Map");
             System.out.print("How many your choice menu ?");
             inputUserMenu = inputMenu.nextLine();
             switch (inputUserMenu) {
@@ -26,6 +28,12 @@ public class Dashboard {
                     break;
                 case "3":
                     calculationSpeed();
+                    break;
+                case "4":
+                    calculationKPKandFPB();
+                    break;
+                case "5":
+                    calculationScalaMap();
                     break;
                 default:
                     System.out.println("Not found menu!");
@@ -63,9 +71,37 @@ public class Dashboard {
 
     }
 
-    private static void calculationScala(){
+    private static void calculationScalaMap(){
         Scanner valueScala = new Scanner(System.in);
-
+        String inputDistanceFromMap, inputDistanceActually;
+        String[] unit = {"km", ""};
+        Integer inputScalaInt, valueUnit;
+        System.out.print("Distance value : " );
+        inputScalaInt = valueScala.nextInt();
+        System.out.print("Distance from map : ");
+        inputDistanceFromMap = valueScala.next();
+        System.out.print("Distance actually : ");
+        inputDistanceActually = valueScala.next();
+        if (inputScalaInt != null && inputDistanceFromMap != null && inputDistanceActually != null){
+            if (!inputDistanceFromMap.equalsIgnoreCase("km") ||
+                !inputDistanceActually.equalsIgnoreCase("km") ||
+                !inputDistanceFromMap.equalsIgnoreCase("hm") ||
+                !inputDistanceActually.equalsIgnoreCase("hm") ||
+                !inputDistanceFromMap.equalsIgnoreCase("dam") ||
+                !inputDistanceActually.equalsIgnoreCase("dam") ||
+                !inputDistanceFromMap.equalsIgnoreCase("m") ||
+                !inputDistanceActually.equalsIgnoreCase("m") ||
+                !inputDistanceFromMap.equalsIgnoreCase("dm") ||
+                !inputDistanceActually.equalsIgnoreCase("dm") ||
+                !inputDistanceFromMap.equalsIgnoreCase("cm") ||
+                !inputDistanceActually.equalsIgnoreCase("cm") ||
+                !inputDistanceFromMap.equalsIgnoreCase("mm") ||
+                !inputDistanceFromMap.equalsIgnoreCase("mm"));
+            else {
+                if (inputDistanceFromMap.equalsIgnoreCase("km"))
+                System.out.println(inputScalaInt * 100);
+            }
+        }
     }
 
     private static boolean repeatMessageTwo(String message) throws IOException{

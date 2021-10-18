@@ -60,7 +60,6 @@ public class Login {
             inputUser = inputOne.nextLine();
             System.out.print(message);
         }
-
         return inputUser.equalsIgnoreCase("Yes");
     }
 
