@@ -98,7 +98,12 @@ public class Dashboard {
                 !inputDistanceFromMap.equalsIgnoreCase("mm") ||
                 !inputDistanceFromMap.equalsIgnoreCase("mm"));
             else {
-                if (inputDistanceFromMap.equalsIgnoreCase("km"))
+                if (inputDistanceFromMap.equalsIgnoreCase("km") ||
+                    inputDistanceActually.equalsIgnoreCase("km") ||
+                    inputDistanceFromMap.equalsIgnoreCase("hm") ||
+                    inputDistanceActually.equalsIgnoreCase("hm")||
+                    inputDistanceFromMap.equalsIgnoreCase("dam") ||
+                    inputDistanceActually.equalsIgnoreCase(""))
                 System.out.println(inputScalaInt * 100);
             }
         }
