@@ -74,8 +74,7 @@ public class Dashboard {
     private static void calculationScalaMap(){
         Scanner valueScala = new Scanner(System.in);
         String inputDistanceFromMap, inputDistanceActually;
-        String[] unit = {"km", ""};
-        Integer inputScalaInt, valueUnit;
+        Integer inputScalaInt;
         System.out.print("Distance value : " );
         inputScalaInt = valueScala.nextInt();
         System.out.print("Distance from map : ");
@@ -103,8 +102,19 @@ public class Dashboard {
                     inputDistanceFromMap.equalsIgnoreCase("hm") ||
                     inputDistanceActually.equalsIgnoreCase("hm")||
                     inputDistanceFromMap.equalsIgnoreCase("dam") ||
-                    inputDistanceActually.equalsIgnoreCase(""))
-                System.out.println(inputScalaInt * 100);
+                    inputDistanceActually.equalsIgnoreCase("dam") ||
+                    inputDistanceFromMap.equalsIgnoreCase("m") ||
+                    inputDistanceActually.equalsIgnoreCase("m") ||
+                    inputDistanceFromMap.equalsIgnoreCase("dm") ||
+                    inputDistanceActually.equalsIgnoreCase("dm") ||
+                    inputDistanceFromMap.equalsIgnoreCase("cm") ||
+                    inputDistanceActually.equalsIgnoreCase("cm") ||
+                    inputDistanceFromMap.equalsIgnoreCase("cm") ||
+                    inputDistanceActually.equalsIgnoreCase("cm") ||
+                    inputDistanceFromMap.equalsIgnoreCase("mm") ||
+                    inputDistanceActually.equalsIgnoreCase("mm")){
+                    System.out.println(inputScalaInt * 100);
+                }
             }
         }
     }
