@@ -74,7 +74,8 @@ public class Dashboard {
     private static void calculationScalaMap(){
         Scanner valueScala = new Scanner(System.in);
         String inputDistanceFromMap, inputDistanceActually;
-        Integer inputScalaInt;
+        Integer inputScalaInt, valueScalaOriginal;
+        valueScalaOriginal = 10;
         System.out.print("Distance value : " );
         inputScalaInt = valueScala.nextInt();
         System.out.print("Distance from map : ");
@@ -100,9 +101,31 @@ public class Dashboard {
         }
 
         if (inputDistanceFromMap.equalsIgnoreCase("km") &&
-            inputDistanceFromMap.equalsIgnoreCase("")){
-
+            inputDistanceFromMap.equalsIgnoreCase("hm") &&
+            inputDistanceFromMap.equalsIgnoreCase("dam") &&
+            inputDistanceFromMap.equalsIgnoreCase("m") &&
+            inputDistanceFromMap.equalsIgnoreCase("dm") &&
+            inputDistanceFromMap.equalsIgnoreCase("cm") &&
+            inputDistanceFromMap.equalsIgnoreCase("mm") &&
+            inputDistanceActually.equalsIgnoreCase("km") &&
+            inputDistanceActually.equalsIgnoreCase("hm") &&
+            inputDistanceActually.equalsIgnoreCase("dam") &&
+            inputDistanceActually.equalsIgnoreCase("m") &&
+            inputDistanceActually.equalsIgnoreCase("dm") &&
+            inputDistanceActually.equalsIgnoreCase("cm") &&
+            inputDistanceActually.equalsIgnoreCase("mm")){
+//            if (inputDistanceFromMap.equalsIgnoreCase("km") &&
+//                inputDistanceActually.equalsIgnoreCase("cm")) {
+//            }
+                System.out.println(inputScalaInt * valueScalaOriginal);
         }
+
+//        if (inputDistanceFromMap.equalsIgnoreCase("km") &&
+//            inputDistanceFromMap.equalsIgnoreCase("dam")){
+//            System.out.println(valueScalaOriginal * valueScalaOriginal++);
+//        }
+//
+//        if (inputDistanceFromMap.equalsIgnoreCase())
     }
 
     private static boolean repeatMessageTwo(String message) throws IOException{
