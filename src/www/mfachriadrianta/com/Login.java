@@ -32,7 +32,6 @@ public class Login {
             edt_username = systemInput.nextLine();
             System.out.print("Password : ");
             edt_password = systemInput.nextLine();
-
                 if(!edt_username.equalsIgnoreCase(dataUsername) || !edt_password.equalsIgnoreCase(dataPassword)){
                     System.out.println("Login failed!");
                 } else {
