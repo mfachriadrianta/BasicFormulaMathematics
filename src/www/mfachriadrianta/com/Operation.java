@@ -50,7 +50,7 @@ public class Operation {
 
     }
 
-    private static void calculationSpeed(){
+    public void calculationSpeed(){
         Scanner valueInput = new Scanner(System.in);
         Float valueSpeed, valueTimeStart, valueTimeFinish;
         System.out.print("Speed average per hour : ");
@@ -63,14 +63,14 @@ public class Operation {
         System.out.println("Distance time  : " + (valueSpeed * (valueTimeFinish - valueTimeStart) + " Km"));
     }
 
-    private static void calculationKPKandFPB(){
+    public void calculationKPKandFPB(){
         Scanner valueKPKandFPB = new Scanner(System.in);
         Integer inputValueKPKandFPBOne, inputValueKPKandFPBTwo, a, b, c, KPK, FPB;
         inputValueKPKandFPBOne = valueKPKandFPB.nextInt();
         inputValueKPKandFPBTwo = valueKPKandFPB.nextInt();
     }
 
-    private static void calculationScalaMap(){
+    public void calculationScalaMap(){
         Scanner valueScala = new Scanner(System.in);
         String inputDistanceFromMap, inputDistanceActually;
         Integer inputScalaInt, valueScalaOriginal;
@@ -127,32 +127,5 @@ public class Operation {
 ////        if (inputDistanceFromMap.equalsIgnoreCase())
     }
 
-    private static boolean repeatMessageTwo(String message) throws IOException{
-        Scanner inputOne = new Scanner(System.in);
-        System.out.print(message + "Yes or No?");
-        String inputUser = inputOne.nextLine();
 
-        while (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
-            System.err.println("Your only choice, yes or no!");
-            System.out.println("============================");
-            if (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
-                System.out.print(message);
-                inputUser = inputOne.nextLine();
-            } else {
-                clearScreenTwo();
-            }
-        }
-
-        return inputUser.equalsIgnoreCase("Yes");
-    }
-
-    public static void clearScreenTwo() throws IOException{
-        try {
-            if (System.getProperty("os.name").contains("Windows")){
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }
-        }catch (Exception e){
-            System.err.println("No cant clear system");
-        }
-    }
 }

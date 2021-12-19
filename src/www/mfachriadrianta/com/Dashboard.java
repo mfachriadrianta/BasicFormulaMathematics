@@ -54,4 +54,33 @@ public class Dashboard {
         Operation operation = new Operation();
         operation.calculationConvertationUnit(true);
     }
+
+    private static boolean repeatMessageTwo(String message) throws IOException{
+        Scanner inputOne = new Scanner(System.in);
+        System.out.print(message + "Yes or No?");
+        String inputUser = inputOne.nextLine();
+
+        while (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
+            System.err.println("Your only choice, yes or no!");
+            System.out.println("============================");
+            if (!inputUser.equalsIgnoreCase("Yes") && !inputUser.equalsIgnoreCase("No")){
+                System.out.print(message);
+                inputUser = inputOne.nextLine();
+            } else {
+                clearScreenTwo();
+            }
+        }
+
+        return inputUser.equalsIgnoreCase("Yes");
+    }
+
+    public static void clearScreenTwo() throws IOException{
+        try {
+            if (System.getProperty("os.name").contains("Windows")){
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            }
+        }catch (Exception e){
+            System.err.println("No cant clear system");
+        }
+    }
 }
