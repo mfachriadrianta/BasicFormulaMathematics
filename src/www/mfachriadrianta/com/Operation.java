@@ -126,6 +126,4 @@ public class Operation {
 ////
 ////        if (inputDistanceFromMap.equalsIgnoreCase())
     }
-
-
 }

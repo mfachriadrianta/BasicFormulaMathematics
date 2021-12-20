@@ -1,4 +1,2 @@
-mfachriadrianta
-medan12071997
-pai
+mfachriadrianta,medan12071997
 km,hm,dam,m,dm,cm,mm

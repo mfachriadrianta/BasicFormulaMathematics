@@ -30,13 +30,13 @@ public class Dashboard {
                     callCalculationConvertationUnit();
                     break;
                 case "3":
-                    calculationSpeed();
+                    callCalculationSpeed();
                     break;
                 case "4":
-                    calculationKPKandFPB();
+                    callCalculationKPKandFPB();
                     break;
                 case "5":
-                    calculationScalaMap();
+                    callCalculationScalaMap();
                     break;
                 default:
                     System.out.println("Not found menu!");
@@ -53,6 +53,21 @@ public class Dashboard {
     public static void callCalculationConvertationUnit() throws IOException{
         Operation operation = new Operation();
         operation.calculationConvertationUnit(true);
+    }
+
+    public static void callCalculationSpeed() throws IOException{
+        Operation operation = new Operation();
+        operation.calculationSpeed();
+    }
+
+    public static void callCalculationKPKandFPB() throws IOException{
+        Operation operation = new Operation();
+        operation.calculationKPKandFPB();
+    }
+
+    public static void callCalculationScalaMap() throws IOException{
+        Operation operation = new Operation();
+        operation.calculationScalaMap();
     }
 
     private static boolean repeatMessageTwo(String message) throws IOException{
