@@ -15,32 +15,33 @@ public class Login {
 
         FileReader fileReader;
         BufferedReader bufferedReader;
+
         try {
             fileReader = new FileReader("database.txt");
             bufferedReader = new BufferedReader(fileReader);
             String dataUsername = bufferedReader.readLine();
             String dataPassword = bufferedReader.readLine();
+            String edt_username, edt_password;
+            Scanner systemInput = new Scanner(System.in);
             boolean next = true;
 
             while (next){
-            clearScreen();
-            System.out.println("");
-            System.out.println("Login");
-            Scanner systemInput = new Scanner(System.in);
-            String edt_username, edt_password;
-            System.out.print("Username : ");
-            edt_username = systemInput.nextLine();
-            System.out.print("Password : ");
-            edt_password = systemInput.nextLine();
-                if(!edt_username.equalsIgnoreCase(dataUsername) || !edt_password.equalsIgnoreCase(dataPassword)){
-                    System.out.println("Login failed!");
+                clearScreen();
+                System.out.println("");
+                System.out.println("Login");
+                System.out.print("Username : ");
+                edt_username = systemInput.nextLine();
+                System.out.print("Password : ");
+                edt_password = systemInput.nextLine();
+                if(!edt_username.equalsIgnoreCase(dataUsername.toLowerCase()) || !edt_password.equalsIgnoreCase(dataPassword.toLowerCase())){
+                    System.out.println("Login failed !");
                 } else {
                     callDashboard();
                 }
-                    next = repeatMessageOne("Are you want next ? ");
+                next = repeatMessageOne("Are you want next ? ");
             }
             }catch (Exception e){
-            System.err.println("Nothing data");
+                System.err.println("Nothing data");
             }
     }
 
