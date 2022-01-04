@@ -14,7 +14,12 @@ public class Operation {
         Scanner inputMenuFragment = new Scanner(System.in);
         String inputUserMenuFragment;
         inputUserMenuFragment = inputMenuFragment.nextLine();
-
+        switch (inputUserMenuFragment){
+            case "":
+                break;
+            default:
+                System.err.println("Not found calculation!");
+        }
     }
 
     public static void  operationConvertationUnit(boolean isDisplay) throws IOException{
