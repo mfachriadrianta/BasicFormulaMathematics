@@ -41,4 +41,12 @@ public class Calculation {
     static void calculationFragmentDecimal(){
 
     }
+
+    static void calculationFragmentPercent(){
+
+    }
+
+    static void calculationFragmentPermil(){
+
+    }
 }

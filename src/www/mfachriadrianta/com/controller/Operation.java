@@ -18,6 +18,8 @@ public class Operation {
         System.out.println("1. Fragment normal");
         System.out.println("2. Fragment mixture");
         System.out.println("3. Fragment decimal");
+        System.out.println("4. Fragment percent");
+        System.out.println("5. Fragment permil");
         System.out.print("Input number operation fragment : ");
         inputUserMenuFragment = input.nextLine();
         switch (inputUserMenuFragment){
@@ -29,6 +31,12 @@ public class Operation {
                 break;
             case "3":
                 calculation.calculationFragmentDecimal();
+                break;
+            case "4":
+                calculation.calculationFragmentPercent();
+                break;
+            case "5":
+                calculation.calculationFragmentPermil();
                 break;
             default:
                 System.err.println("\nNot found operation!");
