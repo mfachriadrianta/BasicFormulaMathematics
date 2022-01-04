@@ -1,5 +1,7 @@
 package www.mfachriadrianta.com;
 
+import www.mfachriadrianta.com.view.Dashboard;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

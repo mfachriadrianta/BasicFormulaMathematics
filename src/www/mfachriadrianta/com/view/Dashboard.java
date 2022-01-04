@@ -1,11 +1,9 @@
-package www.mfachriadrianta.com;
+package www.mfachriadrianta.com.view;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import www.mfachriadrianta.com.controller.Operation;
+
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Dashboard {
 
@@ -25,19 +23,19 @@ public class Dashboard {
             inputUserMenu = inputMenu.nextLine();
             switch (inputUserMenu) {
                 case "1":
-                    calculationFragment();
+                    gettingOperationFragment();
                     break;
                 case "2":
-                    calculationConvertationUnit();
+                    gettingOperationConvertationUnit();
                     break;
                 case "3":
-                    calculationSpeed();
+                    gettingOperationSpeed();
                     break;
                 case "4":
-                    calculationKPKandFPB();
+                    gettingOperationKPKandFPB();
                     break;
                 case "5":
-                    calculationScalaMap();
+                    gettingOperationScalaMap();
                     break;
                 default:
                     System.out.println("Not found menu!");
@@ -46,23 +44,23 @@ public class Dashboard {
         }
     }
 
-    private static void calculationFragment(){
+    private static void gettingOperationFragment(){
         operation.operationFragment();
     }
 
-    private static void calculationConvertationUnit() throws IOException {
+    private static void gettingOperationConvertationUnit() throws IOException {
         operation.operationConvertationUnit(true);
     }
 
-    private static void calculationSpeed(){
+    private static void gettingOperationSpeed(){
         operation.operationSpeed();
     }
 
-    private static void calculationKPKandFPB(){
+    private static void gettingOperationKPKandFPB(){
         operation.operationKPKandFPB();
     }
 
-    private static void calculationScalaMap(){
+    private static void gettingOperationScalaMap(){
         operation.operationScalaMap();
     }
 

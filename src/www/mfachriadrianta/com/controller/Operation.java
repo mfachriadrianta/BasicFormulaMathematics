@@ -1,4 +1,4 @@
-package www.mfachriadrianta.com;
+package www.mfachriadrianta.com.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,15 +10,29 @@ import java.util.StringTokenizer;
 public class Operation {
 
     public static void operationFragment(){
-        System.out.println("This is calculation fragment!");
-        Scanner inputMenuFragment = new Scanner(System.in);
-        String inputUserMenuFragment;
-        inputUserMenuFragment = inputMenuFragment.nextLine();
+        System.out.println("This is operation fragment!");
+        Scanner input = new Scanner(System.in);
+        String inputUserMenuFragment, inputNumeratorOne, inputNumeratorTwo, inputDenominatorOne, inputDenominatorTwo;
+        System.out.println("1. Fragment normal");
+        System.out.println("2. Fragment mixture");
+        System.out.println("3. Fragment decimal");
+        System.out.print("Input number operation fragment : ");
+        inputUserMenuFragment = input.nextLine();
         switch (inputUserMenuFragment){
-            case "":
+            case "1":
+                System.out.print("Input numerator one : ");
+                inputNumeratorOne = input.nextLine();
+                System.out.println("Input denominator two : ");
+                inputDenominatorOne = input.nextLine();
+                break;
+            case "2":
+                System.out.println("mixture");
+                break;
+            case "3":
+                System.out.println("decimal");
                 break;
             default:
-                System.err.println("Not found calculation!");
+                System.err.println("\nNot found operation!");
         }
     }
 
@@ -86,7 +100,6 @@ public class Operation {
         inputDistanceFromMap = valueScala.next();
         System.out.print("Distance actually : ");
         inputDistanceActually = valueScala.next();
-
 
 //        if (!inputDistanceFromMap.equalsIgnoreCase("km") &&
 //            !inputDistanceFromMap.equalsIgnoreCase("hm") &&
