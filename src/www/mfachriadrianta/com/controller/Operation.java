@@ -9,10 +9,12 @@ import java.util.StringTokenizer;
 
 public class Operation {
 
+    public static Calculation calculation = new Calculation();
+
     public static void operationFragment(){
-        System.out.println("This is operation fragment!");
+        System.out.println("=== List Operation Fragment ===");
         Scanner input = new Scanner(System.in);
-        String inputUserMenuFragment, inputNumeratorOne, inputNumeratorTwo, inputDenominatorOne, inputDenominatorTwo;
+        String inputUserMenuFragment;
         System.out.println("1. Fragment normal");
         System.out.println("2. Fragment mixture");
         System.out.println("3. Fragment decimal");
@@ -20,16 +22,13 @@ public class Operation {
         inputUserMenuFragment = input.nextLine();
         switch (inputUserMenuFragment){
             case "1":
-                System.out.print("Input numerator one : ");
-                inputNumeratorOne = input.nextLine();
-                System.out.println("Input denominator two : ");
-                inputDenominatorOne = input.nextLine();
+                calculation.calculationFragmentNormal();
                 break;
             case "2":
-                System.out.println("mixture");
+                calculation.calculationFragmentMixture();
                 break;
             case "3":
-                System.out.println("decimal");
+                calculation.calculationFragmentDecimal();
                 break;
             default:
                 System.err.println("\nNot found operation!");

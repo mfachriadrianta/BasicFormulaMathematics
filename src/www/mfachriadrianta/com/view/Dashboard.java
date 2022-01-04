@@ -13,7 +13,7 @@ public class Dashboard {
         String inputUserMenu;
         boolean nexttwo = true;
         while (nexttwo) {
-            System.out.println("Dashboard Menu");
+            System.out.println("=== Dashboard Menu ===");
             System.out.println("1. Calculation Fragment");
             System.out.println("2. Calculation Convertation Unit");
             System.out.println("3. Calculation Speed");
