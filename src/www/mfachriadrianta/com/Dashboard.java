@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 
 public class Dashboard {
 
+    public static Operation operation = new Operation();
     public void menuDashboard() throws IOException{
         Scanner inputMenu = new Scanner(System.in);
         String inputUserMenu;
@@ -27,7 +28,7 @@ public class Dashboard {
                     calculationFragment();
                     break;
                 case "2":
-                    calculationConvertationUnit(true);
+                    calculationConvertationUnit();
                     break;
                 case "3":
                     calculationSpeed();
@@ -46,122 +47,23 @@ public class Dashboard {
     }
 
     private static void calculationFragment(){
-        System.out.println("Fragment");
+        operation.operationFragment();
     }
 
-    private static void calculationConvertationUnit(boolean isDisplay) throws IOException {
-
-        // Process checking data convertation unit
-        try {
-            File file = new File("database.txt");
-        } catch (Exception e) {
-            System.err.println("Database not found");
-        }
-
-        FileReader fileReader = new FileReader("database.txt");
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        Scanner input = new Scanner(System.in);
-        System.out.print("Input convertation unit distance : ");
-        String checkingConvertationUnit, dataConvertationUnit;
-        checkingConvertationUnit = input.nextLine();
-        dataConvertationUnit = bufferedReader.readLine();
-        String[] keywordConvertationUnit = checkingConvertationUnit.split("\\s+");
-        boolean isExist;
-
-        while (dataConvertationUnit != null) {
-            isExist = true;
-            for (String repeatcheckingUnit : keywordConvertationUnit) {
-                isExist = isExist && dataConvertationUnit.toLowerCase().contains(repeatcheckingUnit.toLowerCase());
-            }
-            if (isExist) {
-                if (isDisplay) {
-                    System.out.println(dataConvertationUnit);
-                } else if (isDisplay){
-                    System.out.println("Not found");
-                }
-            }
-            dataConvertationUnit = bufferedReader.readLine();
-        }
-
+    private static void calculationConvertationUnit() throws IOException {
+        operation.operationConvertationUnit(true);
     }
 
     private static void calculationSpeed(){
-        Scanner valueInput = new Scanner(System.in);
-        Float valueSpeed, valueTimeStart, valueTimeFinish;
-        System.out.print("Speed average per hour : ");
-        valueSpeed = valueInput.nextFloat();
-        System.out.print("Time start : ");
-        valueTimeStart = valueInput.nextFloat();
-        System.out.print("Time finish : ");
-        valueTimeFinish = valueInput.nextFloat();
-        System.out.println("Traveling time : " + (valueTimeFinish - valueTimeStart) + " Clock");
-        System.out.println("Distance time  : " + (valueSpeed * (valueTimeFinish - valueTimeStart) + " Km"));
+        operation.operationSpeed();
     }
 
     private static void calculationKPKandFPB(){
-        Scanner valueKPKandFPB = new Scanner(System.in);
-        Integer inputValueKPKandFPBOne, inputValueKPKandFPBTwo, a, b, c, KPK, FPB;
-        inputValueKPKandFPBOne = valueKPKandFPB.nextInt();
-        inputValueKPKandFPBTwo = valueKPKandFPB.nextInt();
+        operation.operationKPKandFPB();
     }
 
     private static void calculationScalaMap(){
-        Scanner valueScala = new Scanner(System.in);
-        String inputDistanceFromMap, inputDistanceActually;
-        Integer inputScalaInt, valueScalaOriginal;
-        valueScalaOriginal = 10;
-        System.out.print("Distance value : " );
-        inputScalaInt = valueScala.nextInt();
-        System.out.print("Distance from map : ");
-        inputDistanceFromMap = valueScala.next();
-        System.out.print("Distance actually : ");
-        inputDistanceActually = valueScala.next();
-
-
-//        if (!inputDistanceFromMap.equalsIgnoreCase("km") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("hm") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("dam") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("m") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("dm") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("cm") &&
-//            !inputDistanceFromMap.equalsIgnoreCase("mm") &&
-//            !inputDistanceActually.equalsIgnoreCase("km") &&
-//            !inputDistanceActually.equalsIgnoreCase("hm") &&
-//            !inputDistanceActually.equalsIgnoreCase("dam") &&
-//            !inputDistanceActually.equalsIgnoreCase("m") &&
-//            !inputDistanceActually.equalsIgnoreCase("dm") &&
-//            !inputDistanceActually.equalsIgnoreCase("cm") &&
-//            !inputDistanceActually.equalsIgnoreCase("mm")){
-//            System.out.println("Nothing!");
-//        }
-//
-//        if (inputDistanceFromMap.equalsIgnoreCase("km") &&
-//            inputDistanceFromMap.equalsIgnoreCase("hm") &&
-//            inputDistanceFromMap.equalsIgnoreCase("dam") &&
-//            inputDistanceFromMap.equalsIgnoreCase("m") &&
-//            inputDistanceFromMap.equalsIgnoreCase("dm") &&
-//            inputDistanceFromMap.equalsIgnoreCase("cm") &&
-//            inputDistanceFromMap.equalsIgnoreCase("mm") &&
-//            inputDistanceActually.equalsIgnoreCase("km") &&
-//            inputDistanceActually.equalsIgnoreCase("hm") &&
-//            inputDistanceActually.equalsIgnoreCase("dam") &&
-//            inputDistanceActually.equalsIgnoreCase("m") &&
-//            inputDistanceActually.equalsIgnoreCase("dm") &&
-//            inputDistanceActually.equalsIgnoreCase("cm") &&
-//            inputDistanceActually.equalsIgnoreCase("mm")){
-////            if (inputDistanceFromMap.equalsIgnoreCase("km") &&
-////                inputDistanceActually.equalsIgnoreCase("cm")) {
-////            }
-//                System.out.println(inputScalaInt * valueScalaOriginal);
-//        }
-//
-////        if (inputDistanceFromMap.equalsIgnoreCase("km") &&
-////            inputDistanceFromMap.equalsIgnoreCase("dam")){
-////            System.out.println(valueScalaOriginal * valueScalaOriginal++);
-////        }
-////
-////        if (inputDistanceFromMap.equalsIgnoreCase())
+        operation.operationScalaMap();
     }
 
     private static boolean repeatMessageTwo(String message) throws IOException{
@@ -189,11 +91,8 @@ public class Dashboard {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
         }catch (Exception e){
-            System.err.println("No cant clear system");
+            System.err.println("No can't clear system");
         }
     }
 
-    public static void callFunction() throws IOException{
-
-    }
 }
