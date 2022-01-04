@@ -62,7 +62,7 @@ public class Dashboard {
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Input convertation unit distance : ");
+        System.out.print("Checking convertation unit : ");
         String checkingConvertationUnit, dataConvertationUnit;
         checkingConvertationUnit = input.nextLine();
         dataConvertationUnit = bufferedReader.readLine();

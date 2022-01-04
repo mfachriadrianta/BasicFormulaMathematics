@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class Operation {
-    public static boolean checkingData(String[] keywordConvertationUnit, boolean isDisplay) throws IOException {
+    static boolean checkingData(String[] keywordConvertationUnit, boolean isDisplay) throws IOException {
         FileReader fileReader = new FileReader("database.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         String dataConvertationUnit = bufferedReader.readLine();
         boolean isExist = true;
+        int nomorDataConvertationUnit = 5;
 
         while (dataConvertationUnit != null) {
             isExist = true;
@@ -23,6 +24,8 @@ public class Operation {
                 } else if (isDisplay){
                     System.out.println("Not found");
                 }
+//            if (isExist) {
+//            }
             dataConvertationUnit = bufferedReader.readLine();
         }
 
