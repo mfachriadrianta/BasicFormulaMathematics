@@ -43,7 +43,7 @@ public class Operation {
         }
     }
 
-    public static void  operationConvertationUnit(boolean isDisplay) throws IOException{
+    public static void operationConvertationUnit(boolean isDisplay) throws IOException{
         try {
             File file = new File("database.txt");
         } catch (Exception e) {
