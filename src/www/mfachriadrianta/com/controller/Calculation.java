@@ -38,7 +38,7 @@ public class Calculation {
             case "3":
                 // numeOne and Two (Numerator dalam bahasa indonesia pembilang)
                 // denoOne and Two (Denominator dalam bahasa indonesia penyebut)
-                Integer numeOneAddition, numeTwoAddition, denoOneAddition, denoTwoAddition, resultNume, resultDeno;
+                Integer numeOneAddition, numeTwoAddition, denoOneAddition, denoTwoAddition, resultNume, resultDeno, resultValueMid;
                 System.out.print("Input number numerator first : ");
                 numeOneAddition = input.nextInt();
                 System.out.print("Input denominator first : ");
@@ -53,14 +53,12 @@ public class Calculation {
                     numeOneMultiplication = (resultDeno/denoOneAddition)*numeOneAddition;
                     numeTwoMultiplication = (resultDeno/denoTwoAddition)*numeTwoAddition;
                     resultNume = numeOneMultiplication+numeTwoMultiplication;
+                    System.out.print(numeOneMultiplication + "/" + resultDeno + " + " + numeTwoMultiplication + "/" + resultDeno + " = " + resultNume + "/" + resultDeno + " = ");
                     if (resultNume > resultDeno) {
-                        resultNume = resultNume/resultDeno;
-                        if (resultDeno > resultNume){
-                            resultNume = resultNume % resultDeno;
-                            System.out.println(resultNume);
-                        }else {
-                            System.out.println(numeOneMultiplication+"/"+resultDeno+" + "+numeTwoMultiplication+"/"+resultDeno+" = "+resultNume+"/"+resultDeno+"=" +resultNume);
-                        }
+                        resultValueMid = resultNume / resultDeno;
+                        resultNume = resultNume % resultDeno;
+                        System.out.print(resultValueMid + "--");
+                        System.out.println(resultNume + "/" + resultDeno);
                     }
                     else{
                         System.out.println(numeOneMultiplication+"/"+resultDeno+" + "+numeTwoMultiplication+"/"+resultDeno+" = "+resultNume+"/"+resultDeno);
