@@ -17,7 +17,9 @@ public class Calculation {
         inputOperationCalculation = input.nextLine();
         switch (inputOperationCalculation){
             case "1":
-                Integer numeOneMultiplication, numeTwoMultiplication, denoOneMultiplication, denoTwoMultiplication,  resultValueNumerator, resultValueDenominator;
+                Integer numeOneMultiplication, numeTwoMultiplication,
+                        denoOneMultiplication, denoTwoMultiplication,
+                        resultValueNumerator, resultValueDenominator;
                 System.out.print("Input number numerator first : ");
                 numeOneMultiplication = input.nextInt();
                 System.out.print("Input denominator first : ");
@@ -33,12 +35,46 @@ public class Calculation {
                         + resultValueNumerator + "/" +resultValueDenominator);
                 break;
             case "2":
-                System.out.println("Pembagian");
+                Integer numeOneDistribution, numeTwoDistribution,
+                        denoOneDistribution, denoTwoDistribution,
+                        resultNumeDistribution, resultDenoDistribution,
+                        resultNumeDistributionOne, resultDenoDistributionOne,
+                        resultNumeDistributionRemainder;
+                System.out.print("Input number numerator first : ");
+                numeOneDistribution = input.nextInt();
+                System.out.print("Input denominator first : ");
+                denoOneDistribution = input.nextInt();
+                System.out.print("Input number numerator second : ");
+                numeTwoDistribution = input.nextInt();
+                System.out.print("Input number denominator second : ");
+                denoTwoDistribution = input.nextInt();
+                System.out.print(numeOneDistribution + "/" + denoOneDistribution
+                + " X " + denoTwoDistribution + "/" + numeTwoDistribution + " = ");
+                if (denoOneDistribution != denoTwoDistribution){
+                    resultNumeDistribution = numeOneDistribution * denoTwoDistribution;
+                    resultDenoDistribution = denoOneDistribution * numeTwoDistribution;
+                    System.out.print(resultNumeDistribution + "/" + resultDenoDistribution + " = ");
+                    if (resultNumeDistribution >= resultDenoDistribution) {
+                        if (resultNumeDistribution % resultDenoDistribution != 0) {
+                            resultNumeDistributionOne = resultNumeDistribution / (resultNumeDistribution / resultDenoDistribution);
+                            resultDenoDistributionOne = resultDenoDistribution / (resultNumeDistribution / resultDenoDistribution);
+                            System.out.print(resultNumeDistributionOne + "/" + resultDenoDistributionOne + " = ");
+                            resultNumeDistributionRemainder = resultNumeDistribution / resultDenoDistribution;
+                            System.out.print(resultNumeDistributionRemainder + "-");
+                            resultNumeDistributionOne = resultNumeDistributionOne % resultDenoDistributionOne;
+                            System.out.println(resultNumeDistributionOne + "/" + resultDenoDistributionOne);
+                        } else {
+
+                        }
+                    }
+                }
                 break;
             case "3":
                 // numeOne and Two (Numerator dalam bahasa indonesia pembilang)
                 // denoOne and Two (Denominator dalam bahasa indonesia penyebut)
-                Integer numeOneAddition, numeTwoAddition, denoOneAddition, denoTwoAddition, resultNume, resultDeno, resultValueMid;
+                Integer numeOneAddition, numeTwoAddition,
+                        denoOneAddition, denoTwoAddition,
+                        resultNume, resultDeno, resultValueMid;
                 System.out.print("Input number numerator first : ");
                 numeOneAddition = input.nextInt();
                 System.out.print("Input denominator first : ");
@@ -63,7 +99,6 @@ public class Calculation {
                     else{
                         System.out.println(numeOneMultiplication+"/"+resultDeno+" + "+numeTwoMultiplication+"/"+resultDeno+" = "+resultNume+"/"+resultDeno);
                     }
-
                 } else if (denoOneAddition == denoTwoAddition){
                         resultNume = numeOneAddition + numeTwoAddition;
                         if (resultNume % denoOneAddition == 0){
