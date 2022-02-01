@@ -1,5 +1,6 @@
 package www.mfachriadrianta.com.controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculation {
@@ -49,25 +50,23 @@ public class Calculation {
                 System.out.print("Input number denominator second : ");
                 denoTwoDistribution = input.nextInt();
                 System.out.print(numeOneDistribution + "/" + denoOneDistribution
-                + " X " + denoTwoDistribution + "/" + numeTwoDistribution + " = ");
-                if (denoOneDistribution != denoTwoDistribution){
-                    resultNumeDistribution = numeOneDistribution * denoTwoDistribution;
-                    resultDenoDistribution = denoOneDistribution * numeTwoDistribution;
-                    System.out.print(resultNumeDistribution + "/" + resultDenoDistribution + " = ");
-                    if (resultNumeDistribution >= resultDenoDistribution) {
-                        if (resultNumeDistribution % resultDenoDistribution != 0) {
+                + " : " + numeTwoDistribution + "/" + denoTwoDistribution + " = ");
+                resultNumeDistribution = numeOneDistribution * denoTwoDistribution;
+                resultDenoDistribution = denoOneDistribution * numeTwoDistribution;
+                System.out.print(numeOneDistribution + "/" + denoOneDistribution
+                            + " X " + denoTwoDistribution + "/" + numeTwoDistribution + " = " +
+                            resultNumeDistribution + "/" + resultDenoDistribution + "\n");
+                if (resultNumeDistribution >= resultDenoDistribution) {
+                    if (resultNumeDistribution % resultDenoDistribution != 0) {
                             resultNumeDistributionOne = resultNumeDistribution / (resultNumeDistribution / resultDenoDistribution);
                             resultDenoDistributionOne = resultDenoDistribution / (resultNumeDistribution / resultDenoDistribution);
-                            System.out.print(resultNumeDistributionOne + "/" + resultDenoDistributionOne + " = ");
+                            System.out.print(" = " + resultNumeDistributionOne + "/" + resultDenoDistributionOne + " = ");
                             resultNumeDistributionRemainder = resultNumeDistribution / resultDenoDistribution;
                             System.out.print(resultNumeDistributionRemainder + "-");
                             resultNumeDistributionOne = resultNumeDistributionOne % resultDenoDistributionOne;
                             System.out.println(resultNumeDistributionOne + "/" + resultDenoDistributionOne);
-                        } else {
-
                         }
                     }
-                }
                 break;
             case "3":
                 // numeOne and Two (Numerator dalam bahasa indonesia pembilang)
@@ -108,7 +107,29 @@ public class Calculation {
                 }
                 break;
             case "4":
-                System.out.println("Pengurangan");
+                Integer numeOneSubtraction, denoOneSubtraction,
+                        numeTwoSubtraction, denoTwoSubtraction,
+                        resultNumeSubtraction, resultDenoSubtraction;
+                System.out.print("Input number numerator first : ");
+                numeOneSubtraction = input.nextInt();
+                System.out.print("Input denominator first : ");
+                denoOneSubtraction = input.nextInt();
+                System.out.print("Input number numerator second : ");
+                numeTwoSubtraction = input.nextInt();
+                System.out.print("Input number denominator second : ");
+                denoTwoSubtraction = input.nextInt();
+                System.out.print("");
+                if (denoOneSubtraction != denoTwoSubtraction){
+
+                }else {
+                    if(numeOneSubtraction > numeTwoSubtraction){
+                        resultNumeSubtraction = numeOneSubtraction - numeTwoSubtraction;
+                        if (denoOneSubtraction == denoTwoSubtraction){
+                            resultDenoSubtraction = denoOneSubtraction;
+
+                        }
+                    }
+                }
                 break;
             default:
                 System.err.println("Not found operation calculation");
