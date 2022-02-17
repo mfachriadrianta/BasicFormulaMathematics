@@ -76,4 +76,8 @@ public class Login {
             System.err.println("Can not proccess clear system!");
         }
     }
+
+    private static void registerUser(){
+
+    }
 }

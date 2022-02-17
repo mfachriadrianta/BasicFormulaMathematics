@@ -109,7 +109,9 @@ public class Calculation {
             case "4":
                 Integer numeOneSubtraction, denoOneSubtraction,
                         numeTwoSubtraction, denoTwoSubtraction,
-                        resultNumeSubtraction, resultDenoSubtraction;
+                        resultNumeSubtraction, resultDenoSubtraction,
+                        resultNumeSubtractionOneEquality, resultNumeSubtractionTwoEquality,
+                        resultDenoSubtractionOneEquality, resultDenoSubtractionTwoEquality;
                 System.out.print("Input number numerator first : ");
                 numeOneSubtraction = input.nextInt();
                 System.out.print("Input denominator first : ");
@@ -118,15 +120,29 @@ public class Calculation {
                 numeTwoSubtraction = input.nextInt();
                 System.out.print("Input number denominator second : ");
                 denoTwoSubtraction = input.nextInt();
-                System.out.print("");
-                if (denoOneSubtraction != denoTwoSubtraction){
-
-                }else {
-                    if(numeOneSubtraction > numeTwoSubtraction){
+                System.out.print(numeOneSubtraction + "/" + denoOneSubtraction + " - " + numeTwoSubtraction + "/" + denoTwoSubtraction + " = ");
+                if (denoOneSubtraction == denoTwoSubtraction){
+                    if (numeOneSubtraction > numeTwoSubtraction){
                         resultNumeSubtraction = numeOneSubtraction - numeTwoSubtraction;
-                        if (denoOneSubtraction == denoTwoSubtraction){
-                            resultDenoSubtraction = denoOneSubtraction;
-
+                        System.out.print(resultNumeSubtraction + "/" + denoOneSubtraction + "\n");
+                    } else if (numeOneSubtraction >= numeTwoSubtraction){
+                        resultNumeSubtraction = numeTwoSubtraction;
+                        resultDenoSubtraction = denoTwoSubtraction;
+                        System.out.print(resultNumeSubtraction + "/" + resultDenoSubtraction + "\n");
+                    }
+                }else {
+                    resultNumeSubtractionOneEquality = ((denoOneSubtraction * denoTwoSubtraction) / denoOneSubtraction) * numeOneSubtraction;
+                    resultDenoSubtractionOneEquality = denoOneSubtraction * denoTwoSubtraction;
+                    resultNumeSubtractionTwoEquality = ((denoOneSubtraction * denoTwoSubtraction) / denoTwoSubtraction) * numeOneSubtraction;
+                    resultDenoSubtractionTwoEquality = resultDenoSubtractionOneEquality;
+                    if (resultDenoSubtractionOneEquality == resultDenoSubtractionTwoEquality){
+                        System.out.print(resultNumeSubtractionOneEquality + "/");
+                        System.out.print(resultDenoSubtractionOneEquality + " - ");
+                        System.out.print(resultNumeSubtractionTwoEquality + "/");
+                        System.out.print(resultDenoSubtractionTwoEquality + " = ");
+                        if (resultNumeSubtractionOneEquality > resultNumeSubtractionTwoEquality){
+                            resultNumeSubtractionOneEquality = resultNumeSubtractionOneEquality - resultNumeSubtractionTwoEquality;
+                            System.out.print(resultNumeSubtractionOneEquality + "/" + resultDenoSubtractionTwoEquality + "\n");
                         }
                     }
                 }
