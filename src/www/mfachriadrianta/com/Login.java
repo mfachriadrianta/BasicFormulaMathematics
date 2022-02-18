@@ -3,9 +3,11 @@ package www.mfachriadrianta.com;
 import www.mfachriadrianta.com.view.Dashboard;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Login {
 
@@ -19,13 +21,21 @@ public class Login {
         BufferedReader bufferedReader;
 
         try {
+            File file = new File("database.txt");
+        } catch (Exception e) {
+            System.err.println("Database not found");
+        }
+        try {
             fileReader = new FileReader("database.txt");
             bufferedReader = new BufferedReader(fileReader);
             String dataUsername = bufferedReader.readLine();
             String dataPassword = bufferedReader.readLine();
-            String edt_username, edt_password;
+            String edt_username, edt_password, primaryKey;
             Scanner systemInput = new Scanner(System.in);
+            systemInput.useDelimiter(",");
+
             boolean next = true;
+
 
             while (next){
                 clearScreen();
@@ -35,11 +45,16 @@ public class Login {
                 edt_username = systemInput.nextLine();
                 System.out.print("Password : ");
                 edt_password = systemInput.nextLine();
-                if(!edt_username.equalsIgnoreCase(dataUsername.toLowerCase()) || !edt_password.equalsIgnoreCase(dataPassword.toLowerCase())){
+
+                edt_username = edt_username.replaceAll("\\s+", "");
+                edt_password = edt_password.replaceAll("\\s+", "");
+
+                if(!edt_username.equalsIgnoreCase(dataUsername.toLowerCase()) && !edt_password.equalsIgnoreCase(dataPassword.toLowerCase())){
                     System.out.println("Login failed !");
                 } else {
                     callDashboard();
                 }
+
                 next = repeatMessageOne("Are you want next ? ");
             }
             }catch (Exception e){
