@@ -1,34 +1,38 @@
 package www.mfachriadrianta.com.controller;
+import www.mfachriadrianta.com.UserScanner.scannerUser;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Scanner;
+
 
 public class CalculationFragment {
 
-    // All operation calculation fragment
+     static Scanner inputOne, inputTwo, inputThree;
+     static String inputOperationCalculation;
+
+     // All operation calculation fragment
     static void calculationFragmentNormal(){
-        Scanner input = new Scanner(System.in);
-        String inputOperationCalculation;
-        System.out.println("=== List operation calculation ===");
+        inputOne = new Scanner(System.in);
+        System.out.println("=== List operation calculation normal===");
         System.out.println("1. Multiplication (X)");
         System.out.println("2. Distribution (:)");
         System.out.println("3. Addition (+)");
         System.out.println("4. Subtraction (-)");
         System.out.print("Input number operation calculation : ");
-        inputOperationCalculation = input.nextLine();
+        inputOperationCalculation = inputOne.nextLine();
         switch (inputOperationCalculation){
             case "1":
                 Integer numeOneMultiplication, numeTwoMultiplication,
                         denoOneMultiplication, denoTwoMultiplication,
                         resultValueNumerator, resultValueDenominator;
                 System.out.print("Input number numerator first : ");
-                numeOneMultiplication = input.nextInt();
+                numeOneMultiplication = inputOne.nextInt();
                 System.out.print("Input denominator first : ");
-                denoOneMultiplication = input.nextInt();
+                denoOneMultiplication = inputOne.nextInt();
                 System.out.print("Input number numerator second : ");
-                numeTwoMultiplication = input.nextInt();
+                numeTwoMultiplication = inputOne.nextInt();
                 System.out.print("Input number denominator second : ");
-                denoTwoMultiplication = input.nextInt();
+                denoTwoMultiplication = inputOne.nextInt();
                 resultValueNumerator = numeOneMultiplication * numeTwoMultiplication;
                 resultValueDenominator = denoOneMultiplication * denoTwoMultiplication;
                 System.out.println(numeOneMultiplication + "/" + denoOneMultiplication + " X "
@@ -42,13 +46,13 @@ public class CalculationFragment {
                         resultNumeDistributionOne, resultDenoDistributionOne,
                         resultNumeDistributionRemainder;
                 System.out.print("Input number numerator first : ");
-                numeOneDistribution = input.nextInt();
+                numeOneDistribution = inputOne.nextInt();
                 System.out.print("Input denominator first : ");
-                denoOneDistribution = input.nextInt();
+                denoOneDistribution = inputOne.nextInt();
                 System.out.print("Input number numerator second : ");
-                numeTwoDistribution = input.nextInt();
+                numeTwoDistribution = inputOne.nextInt();
                 System.out.print("Input number denominator second : ");
-                denoTwoDistribution = input.nextInt();
+                denoTwoDistribution = inputOne.nextInt();
                 System.out.print(numeOneDistribution + "/" + denoOneDistribution
                 + " : " + numeTwoDistribution + "/" + denoTwoDistribution + " = ");
                 resultNumeDistribution = numeOneDistribution * denoTwoDistribution;
@@ -75,13 +79,13 @@ public class CalculationFragment {
                         denoOneAddition, denoTwoAddition,
                         resultNume, resultDeno, resultValueMid;
                 System.out.print("Input number numerator first : ");
-                numeOneAddition = input.nextInt();
+                numeOneAddition = inputOne.nextInt();
                 System.out.print("Input denominator first : ");
-                denoOneAddition = input.nextInt();
+                denoOneAddition = inputOne.nextInt();
                 System.out.print("Input number numerator second : ");
-                numeTwoAddition = input.nextInt();
+                numeTwoAddition = inputOne.nextInt();
                 System.out.print("Input number denominator second : ");
-                denoTwoAddition = input.nextInt();
+                denoTwoAddition = inputOne.nextInt();
                 if(denoOneAddition != denoTwoAddition) {
                     System.out.print(numeOneAddition+"/"+denoOneAddition+" + "+numeTwoAddition+"/"+denoTwoAddition+" = ");
                     resultDeno = denoOneAddition*denoTwoAddition;
@@ -113,13 +117,13 @@ public class CalculationFragment {
                         resultNumeSubtractionOneEquality, resultNumeSubtractionTwoEquality,
                         resultDenoSubtractionOneEquality, resultDenoSubtractionTwoEquality;
                 System.out.print("Input number numerator first : ");
-                numeOneSubtraction = input.nextInt();
+                numeOneSubtraction = inputOne.nextInt();
                 System.out.print("Input denominator first : ");
-                denoOneSubtraction = input.nextInt();
+                denoOneSubtraction = inputOne.nextInt();
                 System.out.print("Input number numerator second : ");
-                numeTwoSubtraction = input.nextInt();
+                numeTwoSubtraction = inputOne.nextInt();
                 System.out.print("Input number denominator second : ");
-                denoTwoSubtraction = input.nextInt();
+                denoTwoSubtraction = inputOne.nextInt();
                 System.out.print(numeOneSubtraction + "/" + denoOneSubtraction + " - " + numeTwoSubtraction + "/" + denoTwoSubtraction + " = ");
                 if (denoOneSubtraction == denoTwoSubtraction){
                     if (numeOneSubtraction > numeTwoSubtraction){
@@ -155,7 +159,13 @@ public class CalculationFragment {
         }
     }
 
-    static void calculationFragmentMixture(){
+    static void calculationFragmentMixture() {
+        inputTwo = new Scanner(System.in);
+        System.out.println("=== List operation calculation fragment mixture ===");
+        System.out.println("1. Multiplication (X)");
+        System.out.println("2. Distribution (:)");
+        System.out.println("3. Addition (+)");
+        System.out.println("4. Subtraction (-)");
 
     }
 
@@ -170,4 +180,5 @@ public class CalculationFragment {
     static void calculationFragmentPermil(){
 
     }
+
 }
