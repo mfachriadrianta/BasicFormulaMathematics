@@ -3,7 +3,7 @@ package www.mfachriadrianta.com.controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Calculation {
+public class CalculationFragment {
 
     // All operation calculation fragment
     static void calculationFragmentNormal(){
@@ -144,6 +144,9 @@ public class Calculation {
                             resultNumeSubtractionOneEquality = resultNumeSubtractionOneEquality - resultNumeSubtractionTwoEquality;
                             System.out.print(resultNumeSubtractionOneEquality + "/" + resultDenoSubtractionTwoEquality + "\n");
                         }
+                    } else if (denoOneSubtraction < denoTwoSubtraction){
+                        resultDenoSubtraction = denoOneSubtraction * denoTwoSubtraction;
+                        System.out.println(resultDenoSubtraction);
                     }
                 }
                 break;

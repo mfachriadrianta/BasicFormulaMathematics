@@ -5,11 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Operation {
 
-    public static Calculation calculation = new Calculation();
+    public static CalculationFragment calculation = new CalculationFragment();
 
     public static void operationFragment(){
         System.out.println("=== List Operation Fragment ===");
