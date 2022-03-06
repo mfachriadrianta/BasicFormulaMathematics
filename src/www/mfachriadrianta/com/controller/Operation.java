@@ -1,5 +1,7 @@
 package www.mfachriadrianta.com.controller;
 
+import www.mfachriadrianta.com.Scanning.ScanningInput;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,19 +10,19 @@ import java.util.Scanner;
 
 public class Operation {
 
-    public static CalculationFragment calculation = new CalculationFragment();
+    static ScanningInput scanningInput = new ScanningInput();
 
     public static void operationFragment(){
-        System.out.println("=== List Operation Fragment ===");
-        Scanner input = new Scanner(System.in);
+        CalculationFragment calculation = new CalculationFragment();
         String inputUserMenuFragment;
+        System.out.println("=== List Operation Fragment ===");
         System.out.println("1. Fragment normal");
         System.out.println("2. Fragment mixture");
         System.out.println("3. Fragment decimal");
         System.out.println("4. Fragment percent");
         System.out.println("5. Fragment permil");
         System.out.print("Input number operation fragment : ");
-        inputUserMenuFragment = input.nextLine();
+        inputUserMenuFragment = scanningInput.Scan().nextLine();
         switch (inputUserMenuFragment){
             case "1":
                 calculation.calculationFragmentNormal();

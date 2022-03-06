@@ -1,5 +1,6 @@
 package www.mfachriadrianta.com;
 
+import www.mfachriadrianta.com.Scanning.ScanningInput;
 import www.mfachriadrianta.com.view.Dashboard;
 
 import java.io.BufferedReader;
@@ -10,6 +11,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Login {
+
+    static ScanningInput scanningInput = new ScanningInput();
 
     public static void main(String[] args) throws IOException {
         checkingLogin();
@@ -31,8 +34,7 @@ public class Login {
             String dataUsername = bufferedReader.readLine();
             String dataPassword = bufferedReader.readLine();
             String edt_username, edt_password, primaryKey;
-            Scanner systemInput = new Scanner(System.in);
-            systemInput.useDelimiter(",");
+            scanningInput.Scan().useDelimiter(",");
 
             boolean next = true;
 
@@ -42,9 +44,9 @@ public class Login {
                 System.out.println("");
                 System.out.println("Login");
                 System.out.print("Username : ");
-                edt_username = systemInput.nextLine();
+                edt_username = scanningInput.Scan().nextLine();
                 System.out.print("Password : ");
-                edt_password = systemInput.nextLine();
+                edt_password = scanningInput.Scan().nextLine();
 
                 edt_username = edt_username.replaceAll("\\s+", "");
                 edt_password = edt_password.replaceAll("\\s+", "");

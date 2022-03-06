@@ -1,5 +1,6 @@
 package www.mfachriadrianta.com.view;
 
+import www.mfachriadrianta.com.Scanning.ScanningInput;
 import www.mfachriadrianta.com.controller.Operation;
 
 import java.io.IOException;
@@ -7,10 +8,10 @@ import java.util.Scanner;
 
 public class Dashboard {
 
-    public static Operation operation = new Operation();
+    static Operation operation = new Operation();
+    static ScanningInput scanningInput = new ScanningInput();
+    String inputUserMenu;
     public void menuDashboard() throws IOException{
-        Scanner inputMenu = new Scanner(System.in);
-        String inputUserMenu;
         boolean nexttwo = true;
         while (nexttwo) {
             System.out.println("=== Dashboard Menu ===");
@@ -20,7 +21,7 @@ public class Dashboard {
             System.out.println("4. Calculation KPK and FPB");
             System.out.println("5. Calculation Scala Map");
             System.out.print("How many your choice menu ?");
-            inputUserMenu = inputMenu.nextLine();
+            inputUserMenu = scanningInput.Scan().nextLine();
             switch (inputUserMenu) {
                 case "1":
                     gettingOperationFragment();
