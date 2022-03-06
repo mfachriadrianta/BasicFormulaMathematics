@@ -4,16 +4,22 @@ import www.mfachriadrianta.com.scanning.ScanningInput;
 
 public class CalculationFragment{
 
-     static ScanningInput scanningInput = new ScanningInput();
-     static String inputOperationCalculation;
-     static  Integer numeOne, numeTwo, denoOne, denoTwo, numberMixtureOne, numberMixtureTwo;
+    static ScanningInput scanningInput = new ScanningInput();
+    static String inputOperationCalculation;
 
-    static void calculationFragmentNormal(){
+    // Repository
+    static Integer numeOne, numeTwo, denoOne, denoTwo,
+            numberMixtureOne, numberMixtureTwo, resultValueNume, resultValueDeno;
+
+    static void optionsMenu(){
         System.out.println("=== List operation calculation normal===");
         System.out.println("1. Multiplication (X)");
         System.out.println("2. Distribution (:)");
         System.out.println("3. Addition (+)");
         System.out.println("4. Subtraction (-)");
+    }
+    static void calculationFragmentNormal(){
+        optionsMenu();
         System.out.print("Input number operation calculation : ");
         inputOperationCalculation = scanningInput.Scan().nextLine();
         switch (inputOperationCalculation){
@@ -156,13 +162,9 @@ public class CalculationFragment{
     }
 
     static void calculationFragmentMixture() {
-        System.out.println("=== List operation calculation fragment mixture ===");
-        System.out.println("1. Multiplication (X)");
-        System.out.println("2. Distribution (:)");
-        System.out.println("3. Addition (+)");
-        System.out.println("4. Subtraction (-)");
-        System.out.print("Input number operation calculation : ");
-        inputOperationCalculation = scanningInput.Scan().nextLine();
+       optionsMenu();
+       System.out.print("Input number operation calculation : ");
+       inputOperationCalculation = scanningInput.Scan().nextLine();
        if (inputOperationCalculation.equals(String.valueOf(1))){
            System.out.print("Input number mixture one : ");
            numberMixtureOne = scanningInput.Scan().nextInt();
@@ -176,11 +178,21 @@ public class CalculationFragment{
            numeTwo = scanningInput.Scan().nextInt();
            System.out.print("Input number denominator two : ");
            denoTwo = scanningInput.Scan().nextInt();
-           System.out.println(numberMixtureOne + " - " + numeOne + "/" + denoOne + " X " + numberMixtureTwo + " - " + numeTwo + "/" + denoTwo + " = ");
+           System.out.println(numberMixtureOne + "-" + numeOne + "/" + denoOne + " X " + numberMixtureTwo + "-" + numeTwo + "/" + denoTwo + " = ");
            if (denoOne != denoTwo){
-
+               numeOne = (denoOne * numberMixtureOne) + numeOne;
+               numeTwo = (denoTwo * numberMixtureTwo) + numeTwo;
+               System.out.print(numeOne + "/" + denoOne + " X " + numeTwo + "/" + denoTwo);
+               numeOne = numeOne * numeTwo;
+               denoOne = denoOne * denoTwo;
+               System.out.print(" = " + numeOne + "/" + denoOne + "\n");
+               if (numeOne > denoOne){
+                   int resultValueSub;
+                   resultValueSub = numeOne / denoOne;
+                   numeOne = numeOne % denoOne;
+                   System.out.print(" = " + resultValueSub + "-" + numeOne + "/" + denoOne + "\n");
+               }
            }
-
        } else if (inputOperationCalculation.equals(String.valueOf(2))){
            System.out.println("2. Distribution (:)");
        } else if (inputOperationCalculation.equals(String.valueOf(3))){
