@@ -50,7 +50,7 @@ public class Dashboard {
     }
 
     private static void gettingOperationConvertationUnit() throws IOException {
-        operation.operationConvertationUnit(true);
+        operation.operationConvertationUnit();
     }
 
     private static void gettingOperationSpeed(){
