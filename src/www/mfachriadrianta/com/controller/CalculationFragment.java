@@ -1,8 +1,6 @@
 package www.mfachriadrianta.com.controller;
 
-import www.mfachriadrianta.com.Scanning.ScanningInput;
-
-import java.io.IOException;
+import www.mfachriadrianta.com.scanning.ScanningInput;
 
 public class CalculationFragment{
 
@@ -178,7 +176,10 @@ public class CalculationFragment{
            numeTwo = scanningInput.Scan().nextInt();
            System.out.print("Input number denominator two : ");
            denoTwo = scanningInput.Scan().nextInt();
-           System.out.print(numberMixtureOne + " - " + numeOne + "/" + denoOne + " X " + numberMixtureTwo + " - " + numeTwo + "/" + denoTwo);
+           System.out.println(numberMixtureOne + " - " + numeOne + "/" + denoOne + " X " + numberMixtureTwo + " - " + numeTwo + "/" + denoTwo + " = ");
+           if (denoOne != denoTwo){
+
+           }
 
        } else if (inputOperationCalculation.equals(String.valueOf(2))){
            System.out.println("2. Distribution (:)");

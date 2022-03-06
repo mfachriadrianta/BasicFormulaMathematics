@@ -1,6 +1,6 @@
 package www.mfachriadrianta.com.view;
 
-import www.mfachriadrianta.com.Scanning.ScanningInput;
+import www.mfachriadrianta.com.scanning.ScanningInput;
 import www.mfachriadrianta.com.controller.Operation;
 
 import java.io.IOException;

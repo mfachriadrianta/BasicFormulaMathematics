@@ -1,6 +1,6 @@
 package www.mfachriadrianta.com.controller;
 
-import www.mfachriadrianta.com.Scanning.ScanningInput;
+import www.mfachriadrianta.com.scanning.ScanningInput;
 
 import java.io.BufferedReader;
 import java.io.File;

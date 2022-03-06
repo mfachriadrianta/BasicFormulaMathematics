@@ -1,4 +1,4 @@
-package www.mfachriadrianta.com.Scanning;
+package www.mfachriadrianta.com.scanning;
 
 import java.util.Scanner;
 

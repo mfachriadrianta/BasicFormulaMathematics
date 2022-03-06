@@ -1,6 +1,6 @@
 package www.mfachriadrianta.com;
 
-import www.mfachriadrianta.com.Scanning.ScanningInput;
+import www.mfachriadrianta.com.scanning.ScanningInput;
 import www.mfachriadrianta.com.view.Dashboard;
 
 import java.io.BufferedReader;
@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Login {
 
