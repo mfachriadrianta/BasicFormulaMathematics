@@ -194,7 +194,35 @@ public class CalculationFragment{
                }
            }
        } else if (inputOperationCalculation.equals(String.valueOf(2))){
-           System.out.println("2. Distribution (:)");
+           System.out.print("Input number mixture one : ");
+           numberMixtureOne = scanningInput.Scan().nextInt();
+           System.out.print("Input numerator one : ");
+           numeOne = scanningInput.Scan().nextInt();
+           System.out.print("Input denominatror one : ");
+           denoOne = scanningInput.Scan().nextInt();
+           System.out.print("Input number mixture two : ");
+           numberMixtureTwo = scanningInput.Scan().nextInt();
+           System.out.print("Input numerator two : ");
+           numeTwo = scanningInput.Scan().nextInt();
+           System.out.print("Input denominator two : ");
+           denoTwo = scanningInput.Scan().nextInt();
+           System.out.println(numberMixtureOne + "-" + numeOne + "/" + denoOne + " : " + numberMixtureTwo + "-" + numeTwo + "/" + denoTwo + " = ");
+           if (denoOne != denoTwo){
+                numeOne = (numberMixtureOne * denoOne) + numeOne;
+                numeTwo = (numberMixtureTwo * denoTwo) + numeTwo;
+                System.out.print(numeOne + "/" + denoOne + " X " + numeTwo + "/" + denoTwo);
+                resultValueNume = numeOne * denoTwo;
+                resultValueDeno = denoOne * numeTwo;
+                System.out.print(" = " + resultValueNume + "/" + resultValueDeno);
+                if (resultValueNume > resultValueDeno){
+                    int resultDistribution;
+                    resultDistribution = resultValueDeno % resultValueNume;
+                    System.out.print(" = " + resultDistribution + "-" );
+                }else {
+//                    System.out.print(numeOne + "/" + denoOne);
+                }
+               System.out.println();
+           }
        } else if (inputOperationCalculation.equals(String.valueOf(3))){
            System.out.println("3. Addition (+)");
        } else if (inputOperationCalculation.equals(String.valueOf(4))){
